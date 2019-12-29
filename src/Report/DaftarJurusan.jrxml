@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9b2ed533-c603-4464-befd-3563722709db">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#0099CC"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="ViramaKarya" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     master_jurusan.`IDJurusan` AS master_jurusan_IDJurusan,
+     master_jurusan.`Jurusan` AS master_jurusan_Jurusan
+FROM
+     `master_jurusan` master_jurusan]]>
+	</queryString>
+	<field name="master_jurusan_IDJurusan" class="java.lang.String"/>
+	<field name="master_jurusan_Jurusan" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="177" splitType="Stretch">
+			<staticText>
+				<reportElement x="183" y="129" width="192" height="20" forecolor="#545454" uuid="3d99fdb1-4250-4aea-8c3e-1871dc4e7d98"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DAFTAR JURUSAN]]></text>
+			</staticText>
+			<line>
+				<reportElement x="1" y="106" width="553" height="1" forecolor="#326D00" uuid="f28e50cf-e04d-4d14-9982-ec2822cbdc7b"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double" lineColor="#333333"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="111" y="75" width="335" height="20" forecolor="#545454" uuid="b857a9f1-a0ce-4c03-863a-70c19a55e5cd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JL. Hang Tuah Raya, No : 26. RT : 05 / RW : 06. Kebayoran Baru - Jakarta Selatan, 12120]]></text>
+			</staticText>
+			<line>
+				<reportElement x="240" y="149" width="77" height="1" forecolor="#545454" uuid="daeadc8e-9c50-4c28-913a-739cfafa3d9d"/>
+			</line>
+			<image>
+				<reportElement x="220" y="-11" width="271" height="86" uuid="74b2c42b-19ba-4e53-be1b-edce98420c55"/>
+				<imageExpression><![CDATA[$P{ViramaKarya}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="23" width="554" height="1" forecolor="#817356" uuid="6c4ef8b6-1e49-4c62-8a57-571b86b8f83d"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="39" y="4" width="201" height="15" forecolor="#545454" uuid="5d143b7f-6d39-4c0a-92c8-4c5cb4fccac0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID JURUSAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="282" y="4" width="242" height="15" forecolor="#545454" uuid="ad295b0e-82ed-4418-bb31-282a0ba6d209"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JURUSAN]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="4" width="555" height="31" uuid="0098a87c-8ac0-4fed-89d7-6aefb7fd52b1"/>
+				<textField pattern="y/MM/d">
+					<reportElement x="39" y="7" width="201" height="15" forecolor="#545454" uuid="06319005-5d0a-41e2-8fe7-3ecd1ad32941"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{master_jurusan_IDJurusan}]]></textFieldExpression>
+				</textField>
+				<textField pattern="y/MM/d">
+					<reportElement x="282" y="7" width="242" height="15" forecolor="#545454" uuid="19bfe1d0-5f8d-4758-bfdf-3511a987100f"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{master_jurusan_Jurusan}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="161" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="e1a895ca-9465-420f-a54e-8a2afaecca13"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="424" y="121" width="100" height="20" uuid="bf9a5117-7e01-47e2-adb7-5451e56ff0e9"/>
+				<text><![CDATA[Kepala Biro USDM/IT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="423" y="35" width="101" height="20" uuid="b592e770-967d-44e6-8818-d19e144675ff"/>
+				<text><![CDATA[PT. Virama Karya]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="424" y="101" width="100" height="20" uuid="c486b435-5ecf-4c5e-9d4f-b49a6cf82401"/>
+				<text><![CDATA[Sukiyo, S.Kom]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement style="Column header" x="424" y="15" width="130" height="20" uuid="d40a6a5c-c9bd-4cce-9311-44959cffbb6a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Jakarta, "+(new java.text.SimpleDateFormat("EEEEE, dd MMMMM yyyy",new Locale("id", "ID"))).format(new Date())]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="424" y="120" width="111" height="1" uuid="109c99e6-9cf2-4e76-a65a-f0fcf727e08e"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="10" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="-18" width="596" height="24" forecolor="#F8F8F8" backcolor="#009999" uuid="979669d9-0503-477c-a7f4-521e3804ccad"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="556" y="3" width="40" height="20" forecolor="#F8F8F8" uuid="fa383d56-2ff8-4ee3-8992-65826322e05f"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="475" y="3" width="80" height="20" forecolor="#F8F8F8" uuid="0ca776e1-5ce4-4815-b4b5-102b0cff22a5"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Halaman "+$V{PAGE_NUMBER}+" dari"]]></textFieldExpression>
+				</textField>
+				<break>
+					<reportElement x="0" y="23" width="100" height="1" uuid="385383ec-6b7e-462f-b6d8-d38fb3379215"/>
+				</break>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

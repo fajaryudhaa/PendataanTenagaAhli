@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9b2ed533-c603-4464-befd-3563722709db">
+	<property name="ireport.zoom" value="1.331000000000003"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="39"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#0099CC"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="ViramaKarya" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     table_user.`IDUser` AS table_user_IDUser,
+     table_user.`Username` AS table_user_Username,
+     table_user.`Password` AS table_user_Password,
+     table_user.`HakAkses` AS table_user_HakAkses
+FROM
+     `table_user` table_user]]>
+	</queryString>
+	<field name="table_user_IDUser" class="java.lang.String"/>
+	<field name="table_user_Username" class="java.lang.String"/>
+	<field name="table_user_Password" class="java.lang.String"/>
+	<field name="table_user_HakAkses" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="177" splitType="Stretch">
+			<staticText>
+				<reportElement x="183" y="129" width="192" height="20" forecolor="#545454" uuid="3d99fdb1-4250-4aea-8c3e-1871dc4e7d98"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DAFTAR USER]]></text>
+			</staticText>
+			<image>
+				<reportElement x="220" y="-17" width="271" height="86" uuid="c96d4bb3-a678-4861-ba6d-a0e45e26d141"/>
+				<imageExpression><![CDATA[$P{ViramaKarya}]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="1" y="106" width="553" height="1" forecolor="#326D00" uuid="f28e50cf-e04d-4d14-9982-ec2822cbdc7b"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double" lineColor="#333333"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="111" y="75" width="335" height="20" forecolor="#545454" uuid="b857a9f1-a0ce-4c03-863a-70c19a55e5cd"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[JL. Hang Tuah Raya, No : 26. RT : 05 / RW : 06. Kebayoran Baru - Jakarta Selatan, 12120]]></text>
+			</staticText>
+			<line>
+				<reportElement x="240" y="149" width="77" height="1" forecolor="#545454" uuid="daeadc8e-9c50-4c28-913a-739cfafa3d9d"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="23" width="554" height="1" forecolor="#817356" uuid="6c4ef8b6-1e49-4c62-8a57-571b86b8f83d"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="1" y="4" width="110" height="15" forecolor="#545454" uuid="5d143b7f-6d39-4c0a-92c8-4c5cb4fccac0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID USER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="270" y="4" width="129" height="15" forecolor="#545454" uuid="ad295b0e-82ed-4418-bb31-282a0ba6d209"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PASSWORD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="418" y="4" width="129" height="15" forecolor="#545454" uuid="96d11d89-c48a-4130-b1e0-f43569d7d970"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[HAK AKSES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="125" y="4" width="129" height="15" forecolor="#545454" uuid="b1f0bc30-5f61-45a2-a03e-c9dbe4ab1252"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[USERNAME]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="4" width="555" height="31" uuid="0098a87c-8ac0-4fed-89d7-6aefb7fd52b1"/>
+				<textField pattern="y/MM/d">
+					<reportElement x="1" y="7" width="110" height="15" forecolor="#545454" uuid="06319005-5d0a-41e2-8fe7-3ecd1ad32941"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{table_user_IDUser}]]></textFieldExpression>
+				</textField>
+				<textField pattern="y/MM/d">
+					<reportElement x="125" y="7" width="129" height="15" forecolor="#545454" uuid="19bfe1d0-5f8d-4758-bfdf-3511a987100f"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{table_user_Username}]]></textFieldExpression>
+				</textField>
+				<textField pattern="y/MM/d">
+					<reportElement x="270" y="7" width="129" height="15" forecolor="#545454" uuid="42a15ea5-7c87-4417-96c2-ca817f689c36"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{table_user_Password}]]></textFieldExpression>
+				</textField>
+				<textField pattern="y/MM/d">
+					<reportElement x="418" y="7" width="129" height="15" forecolor="#545454" uuid="dbbc701e-242c-4b74-8216-9584a74ebf33"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" size="9" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{table_user_HakAkses}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="189" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="e1a895ca-9465-420f-a54e-8a2afaecca13"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement style="Column header" x="435" y="43" width="119" height="20" uuid="5e3e62b8-72e8-41c5-8ed9-ff5d7a1fe4a7"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Tahoma" size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Jakarta, "+(new java.text.SimpleDateFormat("EEEEE, dd MMMMM yyyy",new Locale("id", "ID"))).format(new Date())]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="435" y="149" width="100" height="20" uuid="2ab19588-6932-4fc7-a03a-4318eb97a38f"/>
+				<text><![CDATA[Kepala Biro USDM/IT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="435" y="129" width="100" height="20" uuid="f883a3ad-0fe6-4c64-b726-6d141616d06c"/>
+				<text><![CDATA[Sukiyo, S.Kom]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="434" y="63" width="100" height="20" uuid="165ebe2a-ca2c-4086-bfb6-b91daf86ad6a"/>
+				<text><![CDATA[PT. Virama Karya]]></text>
+			</staticText>
+			<line>
+				<reportElement x="434" y="148" width="111" height="1" uuid="1d43e7eb-2dc3-4732-9ab1-6313e5e7a670"/>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="10" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="-18" width="596" height="24" forecolor="#F8F8F8" backcolor="#009999" uuid="979669d9-0503-477c-a7f4-521e3804ccad"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="556" y="3" width="40" height="20" forecolor="#F8F8F8" uuid="fa383d56-2ff8-4ee3-8992-65826322e05f"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="475" y="3" width="80" height="20" forecolor="#F8F8F8" uuid="0ca776e1-5ce4-4815-b4b5-102b0cff22a5"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Halaman "+$V{PAGE_NUMBER}+" dari"]]></textFieldExpression>
+				</textField>
+				<break>
+					<reportElement x="0" y="23" width="100" height="1" uuid="385383ec-6b7e-462f-b6d8-d38fb3379215"/>
+				</break>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
